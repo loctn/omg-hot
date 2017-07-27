@@ -1,0 +1,11 @@
+@import '_layout';
+@import '_colors';
+
+html, body {
+  background-color: $color-bg-light;
+  color: $color-text-dark;
+  font-family: $font-family;
+  font-weight: $font-weight-normal;
+  min-height: 100vh;
+  min-width: 100vw;
+}

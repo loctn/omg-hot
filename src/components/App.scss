@@ -1,0 +1,10 @@
+/*
+Webpack aliases don't work here yet:
+  https://github.com/webpack-contrib/sass-loader/issues/410
+*/
+@import '../theme/_global';
+@import '../theme/_colors';
+
+.component {
+  background-color: green;
+}
