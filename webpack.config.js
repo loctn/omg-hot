@@ -29,6 +29,7 @@ const config = module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'OMG Hot',
+      googleApiKey: process.env.GOOGLE_API_KEY,
       template: './src/theme/index.ejs',
     }),
     new ExtractTextPlugin({
