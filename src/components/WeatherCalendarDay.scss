@@ -1,10 +1,11 @@
+@import '../theme/_layout';
+
 .component {
   box-sizing: border-box;
   flex-basis: 14.285714286%;
   max-height: 250px;
   overflow: hidden;
-  padding: 20px;
-
+  padding: 3% 0;
   img {
     display: block;
     margin: 0 auto;
@@ -14,6 +15,24 @@
   text-align: center;
   text-transform: uppercase;
 }
-.high, .low {
+.date {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 70%;
   text-align: center;
+  text-transform: uppercase;
+}
+.temp {
+  text-align: center;
+}
+.temp:after {
+  content: '°';
+}
+.high {
+  @extend .temp;
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: $font-weight-bold;
+}
+.low {
+  @extend .temp;
+  font-size: 90%;
 }

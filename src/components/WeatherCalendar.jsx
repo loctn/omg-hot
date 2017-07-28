@@ -32,20 +32,12 @@ class WeatherCalendar extends Component {
   }
 
   render() {
-    const currentWeather = this.state.currentWeather
-    const forecasts = this.state.forecasts
-    const firstDate = currentWeather.dt ? new Date(currentWeather.dt * 1000) : new Date()
-    const forecastsPadLeft = new Array(firstDate.getDay()).fill({})
-
     return (
       <div styleName="component">
-        {forecastsPadLeft.map((fc, i) =>
-          <WeatherCalendarDay key={i} forecast={fc} />
-        )}
-        {currentWeather.dt &&
-          <WeatherCalendarDay forecast={currentWeather} isToday={true} />
+        {this.state.currentWeather.dt &&
+          <WeatherCalendarDay forecast={this.state.currentWeather} isToday={true} />
         }
-        {forecasts.map(fc =>
+        {this.state.forecasts.map(fc =>
           <WeatherCalendarDay key={fc.dt} forecast={fc} />
         )}
       </div>
