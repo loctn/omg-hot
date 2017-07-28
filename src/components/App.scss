@@ -6,5 +6,8 @@ Webpack aliases don't work here yet:
 @import '../theme/_colors';
 
 .component {
-  background-color: green;
+  color: inherit;
+}
+.submit {
+  visibility: hidden;
 }
