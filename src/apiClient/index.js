@@ -6,5 +6,8 @@ const getJson = (url) => request
   .set('Accept', 'application/json')
   .then(res => res.body)
 
+export const getCurrentWeather = (lat, lng) =>
+  getJson(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&APPID=${process.env.OWM_API_KEY}`)
+
 export const get16DayForecast = (lat, lng) =>
   getJson(`http://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lng}&cnt=16&APPID=${process.env.OWM_API_KEY}`)

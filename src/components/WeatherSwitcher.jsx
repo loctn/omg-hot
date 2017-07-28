@@ -9,7 +9,7 @@ import styles from './WeatherSwitcher.scss'
 
 class WeatherSwitcher extends Component {
   state = {
-    address: 'San Francisco, CA'
+    address: ''
   }
   
   getCoordinates(address) {
@@ -38,6 +38,7 @@ class WeatherSwitcher extends Component {
     const inputProps = {
       value: this.state.address,
       onChange: this.handlePlaceChange,
+      placeholder: 'Location'
     }
 
     return (
