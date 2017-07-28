@@ -7,7 +7,7 @@ import skyconsMap from './skyconsMap.json'
 import styles from './WeatherCalendarDay.scss'
 
 
-const MONTHS = ['January', 'February', 'March', 'April', 'May', 'Jun', 'July', 'August', 'September', 'October', 'November', 'December']
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 const DAYS_OF_WEEK = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 class WeatherCalendarDay extends Component {
@@ -22,7 +22,9 @@ class WeatherCalendarDay extends Component {
   }
 
   componentWillUnmount() {
-    this.skycons.remove(this.canvas)
+    if (this.skycons) {
+      this.skycons.remove(this.canvas)
+    }
   }
 
   render() {
@@ -42,7 +44,7 @@ class WeatherCalendarDay extends Component {
         <div styleName="date">{dateText}</div>
         <canvas styleName="icon" ref={canvas => this.canvas = canvas} width="40" height="40"></canvas>
         <div styleName="high">{high}</div>
-        {(low || low === 0) &&
+        {low &&
           <div styleName="low">{low}</div>
         }
       </div>
