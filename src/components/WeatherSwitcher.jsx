@@ -16,7 +16,7 @@ class WeatherSwitcher extends Component {
     geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
       .then(latLng => {
-        this.props.history.push(encodeURIComponent(address).replace(/%20/g, '+'))
+        this.props.history.push(encodeURIComponent(latLng.lat + ',' + latLng.lng))
       })
       .catch(error => console.error('Error', error))
   }

@@ -20,6 +20,7 @@ const config = module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        OWM_API_KEY: JSON.stringify(process.env.OWM_API_KEY),
       }
     }),
     new webpack.LoaderOptionsPlugin({
