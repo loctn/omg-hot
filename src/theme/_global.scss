@@ -9,3 +9,6 @@ html, body {
   min-height: 100vh;
   min-width: 100vw;
 }
+body {
+  background: linear-gradient(to bottom, #def 0, #fff 500px);
+}

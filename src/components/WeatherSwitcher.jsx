@@ -16,6 +16,7 @@ class WeatherSwitcher extends Component {
     geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
       .then(latLng => {
+        // TODO: navigation to the lat/lng URL does not work yet!
         this.props.history.push(encodeURIComponent(latLng.lat + ',' + latLng.lng))
       })
       .catch(error => console.error('Error', error))
